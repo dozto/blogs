@@ -1,0 +1,16 @@
+{
+  "name": "dozto-blogs",
+  "version": "1.0.0",
+  "description": "The content of dozto blogs",
+  "main": "build.js",
+  "repository": "https://github.com/dozto/blogs.git",
+  "author": "Oliver.W <ole3021@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "node ./build.js"
+  },
+  "dependencies": {
+    "front-matter": "^3.0.2",
+    "shortid": "^2.2.14"
+  }
+}

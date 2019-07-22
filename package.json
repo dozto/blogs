@@ -10,7 +10,6 @@
     "build": "node ./build.js"
   },
   "dependencies": {
-    "front-matter": "^3.0.2",
-    "shortid": "^2.2.14"
+    "front-matter": "^3.0.2"
   }
 }

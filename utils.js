@@ -1,7 +1,6 @@
 const fs = require("fs");
 const url = require("url");
 const path = require("path");
-const shortid = require("shortid");
 const fm = require("front-matter");
 
 exports.stats = path => fs.statSync(path);
@@ -39,7 +38,10 @@ exports.generateMetaInfo = (info, blogPath) =>
   info
     .filter(item => item.ext === ".md") // read .md file only
     .map(item => ({
-      _id: shortid.generate(),
+      _id: item.name
+        .replace(/([a-z])([A-Z])/g, "$1-$2")
+        .replace(/[\W_]+/g, "-")
+        .toLowerCase(),
       name: item.name,
       path: "/" + item.dir + "/" + item.name + item.ext,
       category: item.dir.split("/").filter(item => item.length > 0),
